@@ -3,7 +3,18 @@ import joblib
 import numpy as np
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app = FastAPI(title="Diabetes Analyzer API", version="1.0.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "Diabetes Analyzer API is running. Visit /docs for the API reference."}
 
 
 def _to_float(value, name):
@@ -41,9 +52,3 @@ def predict(data: dict):
         "probability": round(probability * 100, 2)
     }
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)

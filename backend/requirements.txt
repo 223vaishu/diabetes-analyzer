@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+joblib
+numpy
+scikit-learn
+PyJWT
+bcrypt
+python-multipart
+sh
