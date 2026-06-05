@@ -4,6 +4,8 @@ Your project has been transformed from a basic script into a high-performance, A
 
 ## 🚀 Deployment Checklist
 
+**Deployed link** - diabetes-analyzer-app.netlify.app
+
 ### 1. Frontend (Vite + React)
 The frontend is already configured with environment awareness.
 - **Build Command**: `npm run build`
